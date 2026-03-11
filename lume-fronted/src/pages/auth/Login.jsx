@@ -36,8 +36,6 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex">
-
-      {/* LEFT IMAGE */}
       <div className="hidden md:flex w-1/2 relative">
         <img
           src="https://images.unsplash.com/photo-1441986300917-64674bd600d8"
@@ -50,10 +48,7 @@ export default function Login() {
           </h1>
         </div>
       </div>
-
-      {/* RIGHT LOGIN */}
-      <div className="flex flex-1 items-center justify-center bg-white">
-
+<div className="flex flex-1 items-center justify-center bg-linear-to-br from-slate-900 via-slate-800 to-emerald-900">
         <div className="w-full max-w-md bg-black p-10 rounded-2xl shadow-2xl">
 
           <div className="text-center mb-8">

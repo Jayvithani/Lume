@@ -2,6 +2,7 @@ import { useState } from "react"
 import api from "../../services/api"
 import { toast } from "react-toastify"
 import { useNavigate } from "react-router-dom"
+
 export default function ForgotPassword() {
 
   const [email,setEmail] = useState("")
@@ -13,24 +14,43 @@ export default function ForgotPassword() {
     try {
       const res = await api.post("/user/forgot",{email})
       toast.success(res.data.message)
-    navigate("/verify-otp")
+      navigate("/verify-otp")
     } catch(err){
       toast.error(err?.response?.data?.message)
     }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        placeholder="Enter email"
-        value={email}
-        onChange={(e)=>setEmail(e.target.value)}
-      />
 
-      <button type="submit">
-        Send OTP
-      </button>
-    </form>
+    <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-emerald-900">
+
+      <form 
+        onSubmit={handleSubmit}
+        className="bg-white p-8 rounded-xl shadow-lg w-87.5"
+      >
+
+        <h2 className="text-2xl font-bold text-center mb-6 text-gray-700">
+          Forgot Password
+        </h2>
+
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}
+          className="w-full border border-gray-300 p-3 rounded-md mb-4 outline-none focus:border-emerald-500"
+        />
+
+        <button
+          type="submit"
+          className="w-full bg-emerald-500 text-white py-3 rounded-md hover:bg-emerald-600 transition"
+        >
+          Send OTP
+        </button>
+
+      </form>
+
+    </div>
+
   )
 }

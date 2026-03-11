@@ -10,7 +10,6 @@ const Home = () => {
 
   const { clothes, loading, error } = useSelector((state) => state.clothes);
   const { categories } = useSelector((state) => state.category);
-
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 
   useEffect(() => {
@@ -36,7 +35,6 @@ const Home = () => {
 
   return (
     <div className="space-y-14">
-      {/* HERO SECTION */}
       <div className="relative h-87.5 w-full overflow-hidden rounded-2xl">
         <img
           src="https://images.unsplash.com/photo-1441986300917-64674bd600d8"
@@ -50,8 +48,6 @@ const Home = () => {
           </p>
         </div>
       </div>
-
-      {/* CATEGORY */}
       <div>
         <h2 className="mb-6 px-10 text-2xl font-bold">Shop by Category</h2>
 
@@ -66,9 +62,7 @@ const Home = () => {
             >
               <img
                 src={`http://localhost:3000/${item.image}`}
-                className="h-40 w-full object-cover transition group-hover:scale-110"
-              />
-
+                className="h-40 w-full object-cover transition group-hover:scale-110"/>
               <div className="p-4 text-center">
                 <h3 className="text-lg font-semibold">{item.name}</h3>
                 <p className="text-xs text-slate-400 uppercase">{item.type}</p>
@@ -77,8 +71,6 @@ const Home = () => {
           ))}
         </div>
       </div>
-
-      {/* PRODUCTS */}
       <div className="py-12">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold px-10">Latest Products</h2>
@@ -110,9 +102,6 @@ const Home = () => {
                 <p className="text-xl font-bold text-emerald-600 mt-1">
                   ₹{item.price}
                 </p>
-
-                {/* COLORS */}
-
                 <div className="flex gap-1 mt-2 flex-wrap">
                   {item.colors?.map((color, i) => (
                     <span
@@ -123,9 +112,6 @@ const Home = () => {
                     </span>
                   ))}
                 </div>
-
-                {/* SIZES */}
-
                 <div className="flex gap-2 mt-2">
                   {item.sizes?.map((size, i) => (
                     <span

@@ -84,8 +84,6 @@ export default function Shop() {
     <main className="min-h-screen bg-linear-to-br from-slate-950 via-black to-slate-950 text-white">
 
       <div className="mx-auto max-w-6xl px-4 py-10">
-
-        {/* HEADER */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
 
           <div>
@@ -97,9 +95,7 @@ export default function Shop() {
               Discover premium fashion with modern style
             </p>
           </div>
-
-          {/* SEARCH */}
-          <input
+                    <input
             value={search}
             onChange={(e)=>setSearch(e.target.value)}
             placeholder="Search product..."
@@ -107,8 +103,6 @@ export default function Shop() {
           />
 
         </div>
-
-        {/* CATEGORY FILTER */}
         <div className="flex flex-wrap gap-3 mb-10">
 
           {categories.map((category)=>(
@@ -130,9 +124,6 @@ export default function Shop() {
           ))}
 
         </div>
-
-        {/* PRODUCTS GRID */}
-
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
           {filteredProducts.map((product)=>(
@@ -141,8 +132,6 @@ export default function Shop() {
               key={product._id}
               className="group rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-lg hover:shadow-emerald-500/30 transition hover:-translate-y-2"
             >
-
-              {/* IMAGE */}
               <div className="relative overflow-hidden">
 
                 <img
@@ -157,9 +146,6 @@ export default function Shop() {
                 </span>
 
               </div>
-
-              {/* CONTENT */}
-
               <div className="p-5 space-y-3">
 
                 <h3 className="text-lg font-semibold group-hover:text-emerald-400 transition">
@@ -183,17 +169,12 @@ export default function Shop() {
             </div>
           ))}
         </div>
-
         {filteredProducts.length === 0 && (
-
           <div className="text-center mt-20 text-slate-400">
             No products found
           </div>
-
         )}
-
       </div>
-
     </main>
   )
 }

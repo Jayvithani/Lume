@@ -56,17 +56,14 @@ const Cart = () => {
                 </button>
               </div>
             ))}
-
             <div className="mt-6 flex items-center justify-between border-t pt-4">
               <h3 className="text-xl font-bold text-gray-800">
                 Total
               </h3>
-
               <p className="text-xl font-bold text-green-600">
                 ₹{total}
               </p>
             </div>
-
             <button className="mt-6 w-full rounded-lg bg-emerald-500 py-3 font-semibold text-white transition hover:bg-emerald-600">
               Checkout
             </button>
